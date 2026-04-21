@@ -7,14 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentStep = 0;
     let isClickable = false;
 
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
-
     function initGame() {
         // Reset state
         currentStep = 0;
@@ -23,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startBtn.disabled = true;
 
         // Shuffle sequence and assign to cards
-        const indices = shuffle([0, 1, 2, 3, 4]);
+        const indices = GameCore.createShuffledIndices(5);
         cards.forEach((card, i) => {
             card.classList.remove('flipped', 'correct', 'error');
             const back = card.querySelector('.card-back');
@@ -50,11 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isClickable || card.classList.contains('flipped')) return;
 
             const clickedValue = parseInt(card.dataset.value);
-            const expectedValue = sequence[currentStep];
-
             card.classList.add('flipped');
 
-            if (clickedValue === expectedValue) {
+            if (GameCore.isExpectedClick(clickedValue, sequence, currentStep)) {
                 card.classList.add('correct');
                 currentStep++;
 
