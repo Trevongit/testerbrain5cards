@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Cards Brain Tester</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>5 Cards Brain Tester</h1>
+            <p id="status">Memorize the sequence...</p>
+            <div id="controls">
+                <button id="start-btn">Start Game</button>
+            </div>
+        </header>
+
+        <main class="game-board" id="game-board">
+            <!-- 5 Cards will be injected here by JS -->
+            <div class="card" data-index="0">
+                <div class="card-inner">
+                    <div class="card-front">?</div>
+                    <div class="card-back">1</div>
+                </div>
+            </div>
+            <div class="card" data-index="1">
+                <div class="card-inner">
+                    <div class="card-front">?</div>
+                    <div class="card-back">2</div>
+                </div>
+            </div>
+            <div class="card" data-index="2">
+                <div class="card-inner">
+                    <div class="card-front">?</div>
+                    <div class="card-back">3</div>
+                </div>
+            </div>
+            <div class="card" data-index="3">
+                <div class="card-inner">
+                    <div class="card-front">?</div>
+                    <div class="card-back">4</div>
+                </div>
+            </div>
+            <div class="card" data-index="4">
+                <div class="card-inner">
+                    <div class="card-front">?</div>
+                    <div class="card-back">5</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="src/game.js"></script>
+</body>
+</html>

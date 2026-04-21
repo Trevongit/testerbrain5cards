@@ -1,0 +1,6 @@
+.venv/
+*.log
+*.pid
+__pycache__/
+.gcodex_ggc_helper.txt
+.gcodex_ggc_prompt.txt
