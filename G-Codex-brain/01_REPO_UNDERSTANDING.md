@@ -1,20 +1,19 @@
 # 01 REPO UNDERSTANDING
 
 ## Technical Summary
-*   **Original Project:** LL3M (cloud-based multi-agent 3D generation).
-*   **Pivot:** **MStorm Asset Forge** (Standalone local static prop generator).
-*   **Core Engine:** Blender 4.0.2 (Local).
-*   **Export Status:** 
-    *   **OBJ/MTL:** Verified and functional as the primary baseline.
-    *   **GLB/glTF:** **BLOCKED** by system-level `_ctypes` issue in the Python environment used by Blender.
+*   **Project:** **5 Cards Brain Tester**
+*   **Type:** Modular HTML/CSS/JS memory game.
+*   **Objective:** Memorize a sequence of 5 cards and click them in the correct numerical order (1-5).
+*   **Stack:** 
+    *   **Frontend:** Vanilla JavaScript, CSS3 (Flexbox/Grid), HTML5.
+    *   **Logic:** Shuffle-based randomization and sequence validation.
 
 ## Current State Assessment
-*   **Headless Automation:** Successfully proven via `blender --background --python <script>`.
-*   **Format Pivot:** The One-Day MVP now assumes an **OBJ-baseline** packaging strategy.
-*   **Environment:** Linux Mint (local), Blender 4.0.2.
+*   **Game Engine:** Functional memory game logic in `src/game.js`.
+*   **UI/UX:** Responsive card layout with CSS transitions for flipping.
+*   **Structure:** Clean separation of concerns between structure (`index.html`), style (`src/style.css`), and logic (`src/game.js`).
 
-## Architecture Layers (MVP)
-1.  **Orchestrator:** Simple CLI (upcoming).
-2.  **Generator:** Maps requests to `bpy` script strings.
-3.  **Bridge:** Executes headless Blender for OBJ/MTL export.
-4.  **Packager:** Bundles OBJ, MTL, and `manifest.json` into timestamped folders.
+## Architecture Layers
+1.  **UI Layer:** `index.html` with card containers and control buttons.
+2.  **Presentation Layer:** `src/style.css` handling card animations and states (correct, error, flipped).
+3.  **Logic Layer:** `src/game.js` managing game state, sequence generation, and user input validation.
