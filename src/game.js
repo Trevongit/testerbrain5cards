@@ -1,3 +1,5 @@
+import GameCore from './game-core.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.card');
     const startBtn = document.getElementById('start-btn');
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reset state
         currentStep = 0;
         isClickable = false;
-        statusText.textContent = "Get ready...";
+        statusText.textContent = 'Get ready...';
         startBtn.disabled = true;
 
         // Shuffle sequence and assign to cards
@@ -26,12 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Show sequence
         setTimeout(() => {
-            statusText.textContent = "Memorize!";
+            statusText.textContent = 'Memorize!';
             cards.forEach(card => card.classList.add('flipped'));
             
             setTimeout(() => {
                 cards.forEach(card => card.classList.remove('flipped'));
-                statusText.textContent = "Click in order (1 to 5)";
+                statusText.textContent = 'Click in order (1 to 5)';
                 isClickable = true;
             }, 3000);
         }, 1000);
@@ -49,16 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentStep++;
 
                 if (currentStep === sequence.length) {
-                    statusText.textContent = "Brain Level: MASTER! 🎉";
+                    statusText.textContent = 'Brain Level: MASTER! 🎉';
                     isClickable = false;
                     startBtn.disabled = false;
-                    startBtn.textContent = "Play Again";
+                    startBtn.textContent = 'Play Again';
                 } else {
                     statusText.textContent = `Correct! Next: ${sequence[currentStep]}`;
                 }
             } else {
                 card.classList.add('error');
-                statusText.textContent = "Brain Overload! Resetting...";
+                statusText.textContent = 'Brain Overload! Resetting...';
                 isClickable = false;
                 
                 setTimeout(() => {
