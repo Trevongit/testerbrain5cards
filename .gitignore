@@ -1,0 +1,10 @@
+.venv/
+node_modules/
+*.log
+*.pid
+__pycache__/
+.codex
+.notify_enabled
+.gcodex_oac_prompt.txt
+.gcodex_ggc_helper.txt
+.gcodex_ggc_prompt.txt

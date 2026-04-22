@@ -1,0 +1,74 @@
+# DYNAMIC MEMORY
+
+## SESSION_LOG_ENTRY
+- timestamp: 2026-04-22T06:21:43Z
+- agent: scripts/bootstrap-brain.sh
+- repo: testerbrain5cards
+- branch: main
+- objective: Initialize baseline G-Codex memory surfaces for this repository injection.
+- actions:
+  - Generated baseline `03_ACTIVE_NOW.md`, `MERGE_LOG.md`, and `DYNAMIC_MEMORY.md`.
+  - Reset inherited template-local activity history in injected brain surfaces.
+- outputs:
+  - G-Codex-brain/03_ACTIVE_NOW.md
+  - G-Codex-brain/ROADMAP.md
+  - G-Codex-brain/MERGE_LOG.md
+  - G-Codex-brain/DYNAMIC_MEMORY.md
+  - G-Codex-brain/PROPOSAL_OUTCOMES.md
+  - G-Codex-brain/AGENT_ROLES.md
+- verification:
+  - Baseline brain files were regenerated during bootstrap.
+- status: DONE
+- blockers: none
+- next_step: Open Control Room and align active state/roadmap with current repo reality.
+
+## SESSION_LOG_ENTRY
+- timestamp: 2026-04-22T06:46:00Z
+- agent: OAC
+- repo: testerbrain5cards
+- branch: unknown (no .git metadata found)
+- objective: Stabilize canonical overlay files against actual repository state and queue the next low-adventure slice.
+- actions:
+  - Ran `git status --short --branch`; confirmed preflight fails because `.git` is missing.
+  - Validated repository structure and runtime/test entrypoints (`src/`, `tests/`, `scripts/`).
+  - Executed `npm run lint` and `npm test`; both passed.
+  - Updated `ROADMAP.md` and `03_ACTIVE_NOW.md` to reflect verified state and next milestone.
+  - Added design proposal `P-001` with deterministic readiness state in `PROPOSAL_OUTCOMES.md`.
+- outputs:
+  - G-Codex-brain/ROADMAP.md
+  - G-Codex-brain/03_ACTIVE_NOW.md
+  - G-Codex-brain/PROPOSAL_OUTCOMES.md
+  - G-Codex-brain/MERGE_LOG.md
+- verification:
+  - `npm run lint` PASS
+  - `npm test` PASS
+- status: DONE
+- blockers:
+  - Git metadata unavailable in repo root (`.git` missing), blocking branch and commit operations.
+- next_step: Implement proposal `P-001` (CI guardrail) as the next low-adventure code slice.
+
+## SESSION_LOG_ENTRY
+- timestamp: 2026-04-22T09:39:00Z
+- agent: OAC
+- repo: testerbrain5cards
+- branch: unknown (no .git metadata found)
+- objective: Execute proposal `P-001` with deterministic CI guardrail and local mirror command.
+- actions:
+  - Added `.github/workflows/ci.yml` with `push`/`pull_request`/`workflow_dispatch` triggers and Node 20 lint/test job.
+  - Added `npm run check` script to mirror CI validation locally.
+  - Updated `README.md` with local validation commands and CI workflow reference.
+  - Synchronized `ROADMAP.md`, `03_ACTIVE_NOW.md`, `PROPOSAL_OUTCOMES.md`, and `MERGE_LOG.md` with execution outcome.
+- outputs:
+  - .github/workflows/ci.yml
+  - package.json
+  - README.md
+  - G-Codex-brain/ROADMAP.md
+  - G-Codex-brain/03_ACTIVE_NOW.md
+  - G-Codex-brain/PROPOSAL_OUTCOMES.md
+  - G-Codex-brain/MERGE_LOG.md
+- verification:
+  - `npm run check` PASS
+- status: DONE
+- blockers:
+  - Git metadata unavailable in repo root (`.git` missing), so branch-targeted CI behavior cannot be confirmed from this workspace.
+- next_step: Restore git metadata and confirm CI runs on intended default branch.

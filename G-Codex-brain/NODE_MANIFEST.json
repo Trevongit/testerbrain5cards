@@ -1,0 +1,25 @@
+{
+  "last_audit_at": "2026-04-15T12:16:11+10:00",
+  "nodes": [
+    {
+      "name": "isan_study",
+      "last_updated": "2026-04-15T12:16:11+10:00",
+      "status": "valid",
+      "required_files_present": [
+        "node_config.json",
+        "README.md"
+      ],
+      "path": "G-Codex-brain/isan_study"
+    },
+    {
+      "name": "marine_systems",
+      "last_updated": "2026-04-15T12:16:11+10:00",
+      "status": "valid",
+      "required_files_present": [
+        "node_config.json",
+        "README.md"
+      ],
+      "path": "G-Codex-brain/marine_systems"
+    }
+  ]
+}
